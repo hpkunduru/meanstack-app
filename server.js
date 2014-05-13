@@ -14,7 +14,8 @@ app.configure(function() {
   app.set('views', __dirname + '/server/views');
   app.set('view engine', 'jade');
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
+  app.use(express.json());
+  app.use(express.urlencoded());
   app.use(stylus.middleware(
     {
       src: __dirname + '/public',
